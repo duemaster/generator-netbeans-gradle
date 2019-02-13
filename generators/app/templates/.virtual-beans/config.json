@@ -1,0 +1,7 @@
+{
+    "jndi-name": "<%= jndiName %>",
+    "connection-pool-name": "<%= connectionPoolName %>",
+    "database-name": "<%= databaseName %>",
+    "database-username": "<%= databaseUserName %>",
+    "database-password": "<%= databasePassword %>"
+}
