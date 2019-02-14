@@ -119,12 +119,15 @@ module.exports = class extends Generator {
       this.destinationPath(`${targetDirectoryPath}gradlew.bat`)
     );
 
+    let projectNameSmall = this.props["projectName"].replace(/\W/g, '');
+    projectNameSmall = projectNameSmall.toLowerCase();
+
     this.fs.copyTpl(
       this.templatePath(`${templateDirectoryPath}build.gradle`),
       this.destinationPath(`${targetDirectoryPath}build.gradle`),
       {
         "projectName": this.props["projectName"],
-        "projectNameSmall": this.props["projectName"].toLowerCase()
+        "projectNameSmall": projectNameSmall
       }
     );
 
@@ -133,7 +136,7 @@ module.exports = class extends Generator {
       this.destinationPath(`${targetDirectoryPath}settings.gradle`),
       {
         "projectName": this.props["projectName"],
-        "projectNameSmall": this.props["projectName"].toLowerCase()
+        "projectNameSmall": projectNameSmall
       }
     );
   }
@@ -148,7 +151,8 @@ module.exports = class extends Generator {
         "connectionPoolName": this.props["connectionPoolName"],
         "databaseName": this.props["databaseName"],
         "databaseUserName": this.props["databaseUserName"],
-        "databasePassword": this.props["databasePassword"]
+        "databasePassword": this.props["databasePassword"],
+        "projectName": this.props["projectName"]
       }
     );
   }

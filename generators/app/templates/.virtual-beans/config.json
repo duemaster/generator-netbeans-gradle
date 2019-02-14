@@ -3,5 +3,6 @@
     "connection-pool-name": "<%= connectionPoolName %>",
     "database-name": "<%= databaseName %>",
     "database-username": "<%= databaseUserName %>",
-    "database-password": "<%= databasePassword %>"
+    "database-password": "<%= databasePassword %>",
+    "project-name": "<%= projectName %>"
 }
