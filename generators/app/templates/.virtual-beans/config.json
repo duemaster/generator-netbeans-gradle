@@ -4,5 +4,7 @@
     "database-name": "<%= databaseName %>",
     "database-username": "<%= databaseUserName %>",
     "database-password": "<%= databasePassword %>",
-    "project-name": "<%= projectName %>"
+    "project-name": "<%= projectName %>",
+    "auto-deploy": <%= autoDeploy %>,
+    "drop-table-on-deploy": <%= dropDatabaseOnDeploy %>
 }

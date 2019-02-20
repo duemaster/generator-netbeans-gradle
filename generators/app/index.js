@@ -46,6 +46,16 @@ module.exports = class extends Generator {
         name: 'databasePassword',
         message: 'What is the password of your database?',
         default: 'password'
+      },
+      {
+        type: "confirm",
+        name: "autoDeploy",
+        message: "Do you want to have the application automatically deploy on load?"
+      },
+      {
+        type: "confirm",
+        name: "dropOnDeploy",
+        message: "Do you want to drop database on every application deploy?"
       }
     ];
 
@@ -94,10 +104,10 @@ module.exports = class extends Generator {
 
   _copyAppClient() {
     const appClientDir = `${this.props["projectName"]}Client/`;
-    this._copyGradleFiles("appclient/" ,appClientDir);
+    this._copyGradleFiles("appclient/", appClientDir);
   }
 
-  _copyGradleFiles(templateDirectoryPath ,targetDirectoryPath) {
+  _copyGradleFiles(templateDirectoryPath, targetDirectoryPath) {
     // Copy base gradle file
     this.fs.copy(
       this.templatePath(`${templateDirectoryPath}.gradle`),
@@ -152,8 +162,16 @@ module.exports = class extends Generator {
         "databaseName": this.props["databaseName"],
         "databaseUserName": this.props["databaseUserName"],
         "databasePassword": this.props["databasePassword"],
-        "projectName": this.props["projectName"]
+        "projectName": this.props["projectName"],
+        "autoDeploy": this.props["autoDeploy"],
+        "dropDatabaseOnDeploy": this.props["dropOnDeploy"]
       }
+    );
+
+    // Create Slides Folder and Config
+    this.fs.copy(
+      this.templatePath('.virtual-beans/tutorial-slides'),
+      this.destinationPath('.virtual-beans/tutorial-slides')
     );
   }
 };
