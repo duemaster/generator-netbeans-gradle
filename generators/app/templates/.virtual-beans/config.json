@@ -6,5 +6,6 @@
     "database-password": "<%= databasePassword %>",
     "project-name": "<%= projectName %>",
     "auto-deploy": <%= autoDeploy %>,
-    "drop-table-on-deploy": <%= dropDatabaseOnDeploy %>
+    "drop-table-on-deploy": <%= dropDatabaseOnDeploy %>,
+    "files-to-open-on-start": []
 }
