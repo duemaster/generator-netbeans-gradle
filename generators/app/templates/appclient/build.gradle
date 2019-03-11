@@ -48,6 +48,7 @@ sourceSets {
 dependencies {
     implementation 'javax.ejb:ejb-api:3.0'
     implementation 'javax.persistence:persistence-api:1.0.2'
+    implementation 'javax.jms:javax.jms-api:2.0.1'
     compile project(":<%= projectName %>Interface")
 }
 
