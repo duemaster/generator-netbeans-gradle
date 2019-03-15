@@ -45,3 +45,8 @@ The following package conventions is also required
 2. Entity - entity
 3. Servelets - servlet
 4. Message Beans - messagebean
+
+
+
+### Optional Configuration
+1. Set persistance.xml to use `create` setting. This is because Virtualbeans internally provides a `drop-table` option.
