@@ -40,7 +40,7 @@ repositories {
 sourceSets {
     main {
          java {
-            srcDirs = ['src']
+            srcDirs = ['src/java']
          }
     }
 }
