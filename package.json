@@ -1,6 +1,6 @@
 {
   "name": "generator-netbeans-gradle",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Creates generator for setting up virtual beans project",
   "homepage": "",
   "author": {

@@ -67,6 +67,7 @@ module.exports = class extends Generator {
 
   writing() {
     this._copyVirtualBeansConfig();
+    this._copyTheiaSettingsConfig();
 
     this._copyBaseProject();
     this._copyAppClient();
@@ -173,5 +174,12 @@ module.exports = class extends Generator {
       this.templatePath('.virtual-beans/tutorial-slides'),
       this.destinationPath('.virtual-beans/tutorial-slides')
     );
+  }
+
+  _copyTheiaSettingsConfig() {
+    this.fs.copy(
+      this.templatePath(`.theia`),
+      this.destinationPath(`.theia`)
+    )
   }
 };
